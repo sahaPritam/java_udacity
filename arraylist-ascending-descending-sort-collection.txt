@@ -1,0 +1,35 @@
+import java.util.*;
+import java.io.*;
+public class arraylist
+{
+    
+    public static void main() throws IOException
+    {
+        //use a scanner class here
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter the number of elements you want to enter: ");
+        int n=Integer.parseInt(br.readLine());
+        arraylist obj=new arraylist();
+        obj.initialise(n);
+    }
+    void initialise(int n)  throws IOException
+    {
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        int i;
+        ArrayList arr=new ArrayList();
+        for(i=0;i<n;i++)
+        {
+            System.out.print("Enter the "+(i+1)+"th element: ");
+            arr.add(Integer.parseInt(br.readLine()));
+        }
+        i=0;
+        Collections.sort(arr);  //sorts the arraylist in ascending order
+        Collections.reverse(arr);   ////reverses the arraylist to get the elements in descending order
+        System.out.print("The elements are: ");
+        while(i<n)
+        {
+            System.out.print(arr.get(i)+" ");    
+            i++;
+        }
+    }
+}
